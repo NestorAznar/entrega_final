@@ -1,0 +1,374 @@
+/* Generales */
+html {
+  scroll-padding-top: 145px; }
+
+body {
+  font-family: 'Source Sans Pro', sans-serif;
+  background-image: linear-gradient(to bottom right, #f6f6f6, #edecec);
+  margin: 0;
+  min-height: 100vh;
+  position: relative; }
+
+header {
+  background-color: white;
+  margin-bottom: 30px;
+  box-shadow: 0 4px 8px 1px rgba(0, 0, 0, 0.2); }
+
+.logo-animacion {
+  width: 50px; }
+
+.logo-animacion:hover {
+  animation-name: rotar;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+  animation-duration: 3s;
+  animation-delay: 0; }
+
+@keyframes rotar {
+  0% {
+    transform: rotateZ(0); }
+  100% {
+    transform: rotateZ(360deg); } }
+
+h1 {
+  font-family: 'Francois One', sans-serif;
+  text-align: center; }
+
+li {
+  list-style: none; }
+
+h2, h4, h5 {
+  font-family: 'Francois One', sans-serif; }
+
+a {
+  text-decoration: none; }
+  a:hover {
+    text-decoration: none; }
+
+/* NAV */
+nav {
+  background-color: #fff; }
+
+nav a.navbar-brand, a.active {
+  font-weight: 500; }
+
+/* Clase - esta semana */
+.clase {
+  background-color: white;
+  height: auto; }
+  .clase a {
+    color: #55c1ab;
+    font-weight: 500; }
+    .clase a:hover {
+      color: #707070;
+      text-decoration: none; }
+
+.sombra {
+  box-shadow: 3px 3px 3px #a4a4a4;
+  z-index: -2; }
+
+.titleIconoResponive {
+  color: #1e1e1f; }
+
+.iconoBoton:hover img {
+  opacity: 50%;
+  transition: .5s ease; }
+
+.iconoBoton:hover {
+  opacity: 100%;
+  transition: .5s ease; }
+
+/* Posteos y aside */
+.posteos {
+  background-color: #fffdee;
+  margin: 30px 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; }
+
+.posteos-post {
+  background-color: white;
+  padding-top: 15px;
+  margin: 30px; }
+
+.posteos-post:hover {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); }
+
+aside {
+  height: 600px;
+  margin-top: 30px; }
+
+.posteos-post h4 {
+  float: left;
+  margin-left: 15px; }
+
+h3 {
+  font-family: 'Francois One', sans-serif;
+  margin: 0; }
+
+h5.posteo-post-subtitulo {
+  float: right;
+  margin-right: 15px; }
+
+.posteos-post p {
+  clear: both;
+  padding-bottom: 30px;
+  margin: 30px; }
+
+.subaside {
+  background-color: white;
+  margin: 0 30px 30px 30px;
+  height: 30%; }
+
+.subaside h4 {
+  font-size: 20px;
+  padding: 5px;
+  margin: 0;
+  padding-top: 10%;
+  display: block;
+  text-align: center; }
+
+.subaside a {
+  font-weight: bold;
+  background-color: #55c1ab;
+  color: white;
+  text-align: center;
+  display: block;
+  padding: 12px;
+  margin: 30px; }
+
+/* Teoria en "Clases" */
+.navbar-clases {
+  background-color: #fafafa;
+  z-index: -1;
+  box-shadow: 0 4px 8px 1px rgba(0, 0, 0, 0.2); }
+
+.scroll-down {
+  transform: translateY(-100%);
+  transition: all 0.5s ease; }
+
+.scroll-up {
+  transform: translateY(0);
+  transition: all 0.5s ease; }
+
+.teoria {
+  background-color: #f1faf7;
+  box-shadow: inset 0 10px 15px -15px black; }
+
+.desplegable, .desplegable a:active {
+  background-color: #55c1ab; }
+
+.desplegable a:hover {
+  background-color: #6ee8cf; }
+
+.boton-descarga {
+  float: right;
+  padding: 15px;
+  margin-top: 15px;
+  margin-right: 20px; }
+
+a.pdf {
+  font-weight: bold;
+  background-color: #ffdc81;
+  color: black; }
+
+a.pdf:hover {
+  background-color: #d3b35f;
+  color: white;
+  text-decoration: none; }
+  a.pdf:hover:hover {
+    text-decoration: none; }
+
+span.abbr {
+  color: black;
+  font-weight: 500;
+  cursor: help; }
+  span.abbr:hover {
+    color: #707070; }
+
+.bloqueTexto {
+  padding: 5px 35px; }
+  .bloqueTexto h4 {
+    padding-left: 15px;
+    padding-bottom: 5px; }
+  .bloqueTexto p span.texto-destacado {
+    font-style: italic; }
+  .bloqueTexto dl {
+    padding-left: 5%; }
+  .bloqueTexto li {
+    padding: 5px 0; }
+  .bloqueTexto li span.bibliografia-titulo {
+    font-weight: 500;
+    font-style: italic; }
+  .bloqueTexto li a, .bloqueTexto .subtemas-link-interno {
+    color: #55c1ab;
+    margin-right: 10px;
+    text-decoration: none;
+    font-weight: 500; }
+    .bloqueTexto li a:hover, .bloqueTexto .subtemas-link-interno:hover {
+      text-decoration: none; }
+    .bloqueTexto li a:hover, .bloqueTexto .subtemas-link-interno:hover {
+      color: #707070; }
+
+a.referencia-figuras {
+  color: #55c1ab;
+  font-weight: 500;
+  text-decoration: none; }
+  a.referencia-figuras:hover {
+    text-decoration: none; }
+  a.referencia-figuras:hover {
+    color: #6ee8cf; }
+
+.figura img {
+  width: 80%;
+  max-width: 500px;
+  min-width: 300px;
+  box-shadow: 4px 0 8px 1px rgba(0, 0, 0, 0.2); }
+
+.figura-leyenda {
+  max-width: 150px; }
+
+@media only screen and (max-width: 576px) {
+  .figura {
+    width: 100%; }
+  .figura-leyenda {
+    max-width: 100%; } }
+
+.estrucuras-subcelulares li {
+  font-weight: 500;
+  color: #707070;
+  padding: 1px 5px; }
+  .estrucuras-subcelulares li:hover {
+    color: black;
+    cursor: pointer; }
+
+/* Tabla en "Resumen de alumno" */
+.referencias div {
+  display: inline-block;
+  font-size: 20px;
+  margin-left: 10px; }
+
+@media only screen and (max-width: 767px) {
+  .referencias {
+    margin-left: 20%; } }
+
+table {
+  text-align: center;
+  width: 80%;
+  margin: 20px 10%;
+  border-collapse: collapse; }
+
+.encabezado {
+  font-weight: bold;
+  background-color: #55c1ab;
+  font-size: 20px;
+  color: #fff; }
+
+table tr {
+  height: 50px;
+  background-color: white; }
+
+table tr:hover {
+  background-color: #f2e2b9; }
+
+table tr:first-child:hover {
+  background-color: #55c1ab; }
+
+td {
+  padding: 1px 10px; }
+
+.icono {
+  width: 60px; }
+
+.cuadradito {
+  display: inline-block;
+  height: 15px;
+  width: 15px;
+  margin: auto; }
+
+.rojo {
+  background-color: #ff6e57; }
+
+.amarillo {
+  background-color: #e4db5e; }
+
+.verde {
+  background-color: #5ccc93; }
+
+.transparente {
+  background-color: rgba(0, 0, 0, 0); }
+
+.novedades-h2 {
+  font-size: 17px;
+  color: #707070; }
+
+.novedades-h3 {
+  font-size: 34px;
+  color: black; }
+
+/* extras */
+.extramargin {
+  margin-bottom: 30px; }
+
+/* contactos */
+.contactos {
+  height: 250px;
+  margin: 50px 15%;
+  background-color: #fff; }
+
+.contactos h2 {
+  padding: 20px 0 0 15px;
+  margin: 0; }
+
+.logo {
+  width: 80px;
+  -webkit-filter: grayscale(100%);
+  filter: grayscale(100%);
+  transition: 0.3s ease; }
+
+.logo:hover {
+  -webkit-filter: grayscale(0%);
+  filter: grayscale(0%); }
+
+@media only screen and (max-width: 575px) {
+  .logo {
+    width: 65%;
+    max-width: 80px;
+    min-width: 50px;
+    -webkit-filter: grayscale(0%);
+    filter: grayscale(0%); }
+  .contactos h2 {
+    font-size: 25px; } }
+
+.contactos ul {
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center; }
+
+.contactos li {
+  width: 33%;
+  margin: 50px 0;
+  text-align: center; }
+
+/* Footer */
+.footer {
+  background-image: linear-gradient(to bottom right, #3c3c3c, #474747, #525252); }
+
+.footer h2 {
+  font-size: 20px;
+  color: #fff;
+  text-align: left;
+  margin: 0; }
+
+.footer a {
+  color: white;
+  text-decoration: none; }
+  .footer a:hover {
+    text-decoration: none; }
+
+.footer a:hover {
+  color: #707070; }

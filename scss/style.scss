@@ -1,0 +1,447 @@
+
+$color-verde: rgb(85, 193, 171);
+$color-verde-claro: rgb(110, 232, 207);
+$color-verde-blanco:rgb(241, 250, 247);
+$color-gris:rgb(250, 250, 250);
+$color-gris-oscuro: rgb(112, 112, 112);
+$color-amarillo: rgb(255, 220, 129);
+$color-amarillo-oscuro: rgb(211, 179, 95);
+$color-amarillo-claro: rgb(242, 226, 185);
+$color-blanco: rgb(255,255,255);
+$color-negro: rgb(0,0,0);
+
+@mixin colores($bg, $font){
+  background-color: $bg;
+  color: $font;
+}
+@mixin tamaño($ancho, $alto){
+  @if $alto == "" {
+    width: $ancho;
+  }@else if $ancho == ""{
+    height: $alto;
+  }@else{
+    height: $alto;
+    width: $ancho;
+  }
+}
+@mixin sombra-navbars {
+  box-shadow: 0 4px 8px 1px rgba(0, 0, 0, 0.2);
+}
+
+@mixin links {
+  text-decoration: none;
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+/* Generales */
+html {
+  scroll-padding-top: 145px;
+}
+body {
+  font-family: 'Source Sans Pro', sans-serif;
+  background-image: linear-gradient(to bottom right, rgb(246, 246, 246), rgb(237, 236, 236));
+  margin: 0;
+  min-height: 100vh;
+  position: relative;
+}
+header {
+  background-color: $color-blanco;
+  margin-bottom: 30px;
+  @include sombra-navbars;
+}
+
+.logo-animacion {
+  @include tamaño(50px,"");
+}
+.logo-animacion:hover {
+  animation-name: rotar;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+  animation-duration: 3s;
+  animation-delay: 0;
+}
+@keyframes rotar {
+  0%{transform: rotateZ(0);}
+  100%{transform: rotateZ(360deg);}
+}
+h1 {
+  font-family: 'Francois One', sans-serif;
+  text-align: center;
+}
+li {
+  list-style: none;
+}
+h2, h4, h5{
+  font-family: 'Francois One', sans-serif;
+}
+a {
+    @include links;
+}
+
+/* NAV */
+nav {
+  background-color: #fff;
+}
+
+nav a.navbar-brand, a.active{
+  font-weight: 500;
+}
+/* Clase - esta semana */
+
+.clase {
+  background-color: $color-blanco;
+  @include tamaño("",auto);
+  a {
+    color: $color-verde;
+    font-weight: 500;
+    &:hover{
+      color: $color-gris-oscuro;
+      text-decoration: none;
+    }
+  }
+}
+.sombra{
+  box-shadow: 3px 3px 3px rgb(164, 164, 164);
+  z-index: -2;
+}
+.titleIconoResponive {
+  color: rgb(30, 30, 31);
+}
+.iconoBoton:hover img{
+  opacity: 50%;
+  transition: .5s ease;
+}
+.iconoBoton:hover{
+  opacity: 100%;
+  transition: .5s ease;
+}
+
+/* Posteos y aside */
+.posteos {
+  background-color: rgb(255, 253, 238);
+  margin: 30px 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.posteos-post{
+  background-color: $color-blanco;
+  padding-top: 15px;
+  margin: 30px;
+}
+.posteos-post:hover {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+aside {
+  @include tamaño("",600px);
+  margin-top: 30px;
+}
+.posteos-post h4{
+  float: left;
+  margin-left: 15px;
+}
+h3 {
+  font-family: 'Francois One', sans-serif;
+  margin: 0;
+}
+h5.posteo-post-subtitulo {
+  float: right;
+  margin-right: 15px;
+}
+.posteos-post p {
+  clear: both;
+  padding-bottom: 30px;
+  margin: 30px;
+}
+
+.subaside {
+  background-color: $color-blanco;
+  margin: 0 30px 30px 30px;
+  @include tamaño("",30%);
+}
+.subaside h4{
+  font-size: 20px;
+  padding: 5px;
+  margin: 0;
+  padding-top: 10%;
+  display: block;
+  text-align: center;
+}
+.subaside a{
+  font-weight: bold;
+  @include colores($color-verde, $color-blanco);
+
+  text-align: center;
+
+  display: block;
+  padding: 12px;
+  margin: 30px;
+}
+
+/* Teoria en "Clases" */
+.navbar-clases {
+  background-color: $color-gris;
+  z-index: -1;
+  @include sombra-navbars;
+}
+.scroll-down {
+  transform:translateY(-100%);
+  transition: all 0.5s ease;
+}
+.scroll-up{
+  transform:translateY(0);
+  transition: all 0.5s ease;
+}
+
+.teoria {
+  background-color: $color-verde-blanco;
+  box-shadow: inset 0 10px 15px -15px black;
+}
+.desplegable, .desplegable a:active{
+  background-color: $color-verde;
+}
+.desplegable a:hover{
+  background-color: $color-verde-claro;
+}
+.boton-descarga{
+  float: right;
+  padding: 15px;
+  margin-top: 15px;
+  margin-right: 20px;
+}
+a.pdf {
+  font-weight: bold;
+  @include colores($color-amarillo, $color-negro);
+}
+a.pdf:hover {
+  @include colores($color-amarillo-oscuro, $color-blanco);
+  @include links;
+}
+span.abbr {
+  color: $color-negro;
+  font-weight: 500;
+  cursor: help;
+  &:hover {
+    color: $color-gris-oscuro;
+  }
+}
+.bloqueTexto {
+  padding: 5px 35px;
+  h4 {
+    padding-left: 15px;
+    padding-bottom: 5px;
+  }
+  p span.texto-destacado{
+    font-style: italic;
+  }
+  dl{
+    padding-left: 5%;
+  }
+  li {
+    padding: 5px 0;
+  }
+  li span.bibliografia-titulo {
+    font-weight: 500;
+    font-style: italic;
+  }
+  li a, .subtemas-link-interno{
+      color: $color-verde;
+      margin-right: 10px;
+      @include links;
+      font-weight: 500;
+      &:hover{
+        color: $color-gris-oscuro;
+      }
+  }
+}
+
+a.referencia-figuras{
+  color: $color-verde;
+  font-weight: 500;
+  @include links;
+  &:hover {
+    color: $color-verde-claro;
+  }
+}
+
+.figura img{
+  @include tamaño(80%,"");
+  max-width: 500px;
+  min-width: 300px;
+  box-shadow: 4px 0 8px 1px rgba(0, 0, 0, 0.2);
+}
+
+.figura-leyenda{
+  max-width: 150px;
+}
+@media only screen and (max-width: 576px) {
+  .figura {
+    @include tamaño(100%,"");
+  }
+  .figura-leyenda {
+    max-width: 100%;
+  }
+}
+.estrucuras-subcelulares li{
+  font-weight: 500;
+  color: $color-gris-oscuro;
+  padding: 1px 5px;
+
+  &:hover {
+    color: $color-negro;
+    cursor: pointer;
+  }
+}
+
+/* Tabla en "Resumen de alumno" */
+
+.referencias div {
+  display: inline-block;
+  font-size: 20px;
+  margin-left: 10px;
+}
+
+@media only screen and (max-width: 767px) {
+  .referencias {
+    margin-left: 20%;
+  }
+}
+
+table {
+  text-align: center;
+
+  @include tamaño(80%,"");
+
+  margin: 20px 10%;
+
+  border-collapse: collapse;
+}
+.encabezado{
+  font-weight: bold;
+  background-color: $color-verde;
+  font-size: 20px;
+  color: #fff;
+}
+table tr {
+  @include tamaño("",50px);
+
+  background-color: $color-blanco;
+}
+table tr:hover {
+  background-color: $color-amarillo-claro;
+}
+table tr:first-child:hover{
+  background-color: $color-verde;
+}
+td {
+  padding: 1px 10px;
+}
+.icono {
+  @include tamaño(60px,"");
+}
+.cuadradito {
+  display: inline-block;
+  @include tamaño(15px,15px);
+  margin: auto;
+}
+.rojo {
+  background-color: rgb(255, 110, 87);
+}
+.amarillo {
+  background-color: rgb(228, 219, 94);
+}
+.verde {
+  background-color: rgb(92, 204, 147);
+}
+.transparente {
+  background-color: rgba(0, 0, 0,0);
+}
+
+@for $n from 1 to 3 {
+  @if $n == 1 {
+    .novedades-h#{$n + 1} {
+      font-size: 17px*$n;
+      color: $color-gris-oscuro;
+    }
+  } @else if $n == 2{
+    .novedades-h#{$n + 1} {
+      font-size: 17px*$n;
+      color: $color-negro;
+    }
+  }
+}
+
+/* extras */
+ .extramargin {
+   margin-bottom: 30px;
+
+ }
+
+/* contactos */
+.contactos {
+  @include tamaño("",250px);
+  margin: 50px 15%;
+  background-color: #fff;
+}
+.contactos h2 {
+  padding: 20px 0 0 15px;
+  margin: 0;
+}
+.logo{
+  @include tamaño(80px,"");
+  -webkit-filter: grayscale(100%);
+  filter: grayscale(100%);
+  transition: 0.3s ease;
+}
+.logo:hover{
+  -webkit-filter: grayscale(0%);
+  filter: grayscale(0%);
+}
+@media only screen and (max-width: 575px) {
+  .logo {
+    @include tamaño(65%,"");
+    max-width: 80px;
+    min-width: 50px;
+    -webkit-filter: grayscale(0%);
+    filter: grayscale(0%);
+  }
+  .contactos h2 {
+    font-size: 25px;
+  }
+}
+.contactos ul{
+  padding: 0;
+  margin: 0;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+.contactos li{
+  @include tamaño(33%,"");
+  margin: 50px 0;
+  text-align: center;
+}
+
+
+/* Footer */
+.footer{
+  background-image: linear-gradient(to bottom right, rgb(60, 60, 60), rgb(71, 71, 71), rgb(82, 82, 82));
+}
+.footer h2 {
+  font-size: 20px;
+  color:#fff;
+  text-align: left;
+  margin: 0;
+}
+.footer a{
+  color: $color-blanco;
+  @include links;
+}
+.footer a:hover{
+  color: $color-gris-oscuro;
+}
